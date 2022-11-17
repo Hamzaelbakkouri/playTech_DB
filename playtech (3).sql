@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 16 nov. 2022 à 19:02
+-- Généré le : jeu. 17 nov. 2022 à 22:00
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -70,17 +70,21 @@ CREATE TABLE `product` (
   `productName` varchar(155) NOT NULL,
   `quantity` int(155) NOT NULL,
   `price` int(155) NOT NULL,
-  `cat_id` int(11) NOT NULL
+  `cat_id` int(11) NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `filter` varchar(155) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `product`
 --
 
-INSERT INTO `product` (`id`, `productName`, `quantity`, `price`, `cat_id`) VALUES
-(38, 'clavier scorpion', 29, 200, 3),
-(39, 'mouse Scorpion', 20, 80, 3),
-(40, 'chair', 22, 2500, 3);
+INSERT INTO `product` (`id`, `productName`, `quantity`, `price`, `cat_id`, `image`, `filter`) VALUES
+(38, 'clavier scorpion', 29, 200, 3, '', ''),
+(39, 'mouse Scorpion', 20, 80, 3, '', ''),
+(40, 'chair', 22, 2500, 3, '', ''),
+(47, 'doliprane', 4, 222, 2, 'evil within.jpg', ''),
+(49, 'moro', 9, 22, 3, '', 'set');
 
 --
 -- Index pour les tables déchargées
@@ -125,7 +129,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT pour la table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- Contraintes pour les tables déchargées
